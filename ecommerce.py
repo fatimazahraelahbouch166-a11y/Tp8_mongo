@@ -5,7 +5,7 @@ collection_client = db['Clients']
 collection_product = db['Produits']
 collection_commande = db['Commandes']
 def CreateCommande():
-    nom_client = input("➡️ Entrer le nom du client : ")
+    nom_client = input(" Entrer le nom du client : ")
     client_doc = collection_client.find_one({"Nom": nom_client})
     if not client_doc:
         print(" Client introuvable")
@@ -150,4 +150,5 @@ def Menu():
             print("choix invalid saisir un nombre entre 1 et 11")
             exit()
 Menu()
+
 
