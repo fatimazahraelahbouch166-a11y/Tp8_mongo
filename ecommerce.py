@@ -66,8 +66,8 @@ def Update_product():
         print("produit introuvable")
         exit()
     categorie=input("saisir la categorie: ")
-    prix=input("saisir le nouveau prix : ")
-    stock=input("saisir le nombre disponible dans le stock : ")
+    prix=float(input("saisir le nouveau prix : "))  
+    stock=int(input("saisir le nombre disponible dans le stock : "))
     collection_product.update_one({"Nom":Nom_prod},{"$set":{"Catégorie": categorie,
             "Prix": prix,
             "Stock": stock}})
@@ -150,5 +150,6 @@ def Menu():
             print("choix invalid saisir un nombre entre 1 et 11")
             exit()
 Menu()
+
 
 
