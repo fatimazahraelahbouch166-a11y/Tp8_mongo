@@ -79,16 +79,19 @@ def Ajouter_champ():
     print("champs disponible avec la valeur true par defaut est bien ajoute")
 # Ajouter_champ()
 # _________________________________________Q7_______________________________________
-def RemoveCommandes(Client,Produit):
+def RemoveCommandes():
+    Client=input("saisir le nom du client")
+    Produit=input("saisir le nom du produit")
     commande=collection_commande.find_one({"Client":Client,"Produits":Produit})
     if not commande:
         print("commande introuvable")
         return 
     collection_commande.delete_one({"Client":Client,"Produits":Produit})
     print("commnande supprimer")
-# RemoveCommandes("Fatima","2x Livre de recettes")
+# RemoveCommandes()
 # ________________________________________________Q8_______________________________________
-def RemoveCommandesParClient(Client):
+def RemoveCommandesParClient():
+    Client=input("saisir le nom du client")
     commande=collection_commande.find_one({"Client":Client})
     if not commande:
         print("commande introuvable")
@@ -136,9 +139,9 @@ def Menu():
         elif choix==6:
             Ajouter_champ()
         elif choix==7:
-             RemoveCommandes("Fatima","2x Livre de recettes")
+             RemoveCommandes()
         elif choix==8:
-            RemoveCommandesParClient("Hassan Al-Haddad")
+            RemoveCommandesParClient()
         elif choix==9:
             TrierCommande()
         elif choix==10:
@@ -150,6 +153,7 @@ def Menu():
             print("choix invalid saisir un nombre entre 1 et 11")
             exit()
 Menu()
+
 
 
 
