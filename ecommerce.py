@@ -92,12 +92,12 @@ def RemoveCommandes():
 # ________________________________________________Q8_______________________________________
 def RemoveCommandesParClient():
     Client=input("saisir le nom du client")
-    commande=collection_commande.find_one({"Client":Client})
-    if not commande:
+    commandes=list(collection_commande.find({"Client":Client}))
+    if len(commandes)==0:
         print("commande introuvable")
         return 
-    collection_commande.delete_one({"Client":Client})
-    print("commnande bien supprimer")
+    collection_commande.delete_many({"Client":Client})
+    print("commnandes bien supprimer")
 # RemoveCommandesParClient("Hassan Al-Haddad")
 # __________________________________________Q9_________________________________
 def TrierCommande():
@@ -153,6 +153,7 @@ def Menu():
             print("choix invalid saisir un nombre entre 1 et 11")
             exit()
 Menu()
+
 
 
 
