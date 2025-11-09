@@ -98,7 +98,7 @@ def RemoveCommandesParClient():
         return 
     collection_commande.delete_many({"Client":Client})
     print("commnandes bien supprimer")
-# RemoveCommandesParClient("Hassan Al-Haddad")
+# RemoveCommandesParClient()
 # __________________________________________Q9_________________________________
 def TrierCommande():
     All_commandes=collection_commande.find().sort({"Date_commande":-1})
@@ -153,6 +153,7 @@ def Menu():
             print("choix invalid saisir un nombre entre 1 et 11")
             exit()
 Menu()
+
 
 
 
